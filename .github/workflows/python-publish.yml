@@ -9,7 +9,6 @@ on:
 
 permissions:
   contents: read
-  packages: write
 
 jobs:
   build-and-publish:
@@ -48,11 +47,11 @@ jobs:
         working-directory: python
         run: python -m build
 
-      - name: Publish to GitHub Packages (Python)
+      - name: Publish to Nexus (PyPI)
         working-directory: python
         env:
-          TWINE_USERNAME: __token__
-          TWINE_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
-          TWINE_REPOSITORY_URL: https://pypi.pkg.github.com/${{ github.repository_owner }}/
+          TWINE_USERNAME: ${{ secrets.NEXUS_USERNAME }}
+          TWINE_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
+          TWINE_REPOSITORY_URL: ${{ secrets.NEXUS_PYPI_REPO_URL }}
         run: |
           python -m twine upload --repository-url "$TWINE_REPOSITORY_URL" dist/*
