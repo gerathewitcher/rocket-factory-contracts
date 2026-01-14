@@ -19,6 +19,7 @@ dynamic = ["version"]
 Homepage = "https://github.com/OWNER/rocket-factory-contracts"
 
 [tool.setuptools_scm]
+root = ".."
 fallback_version = "0.0.0"
 
 [tool.setuptools]
