@@ -1,0 +1,34 @@
+version: "3"
+
+vars:
+  BUF_VERSION: "1.63.0"
+  BIN_DIR: "{{.ROOT_DIR}}/bin"
+  BUF: "{{.BIN_DIR}}/buf"
+
+tasks:
+  install-buf:
+    desc: "Устанавливает Buf в каталог bin"
+    cmds:
+      - |
+        [ -f {{.BUF}} ] || {
+          mkdir -p {{.BIN_DIR}} tmp-buf
+          curl -sSL \
+            "https://github.com/bufbuild/buf/releases/download/v{{.BUF_VERSION}}/buf-$(uname -s)-$(uname -m).tar.gz" \
+            | tar -xz -C tmp-buf
+          mv tmp-buf/buf/bin/buf {{.BUF}}
+          rm -rf tmp-buf
+          chmod +x {{.BUF}}
+        }
+
+  proto:gen:
+    deps: [install-buf, proto:lint]
+    desc: Генерация python кода из .proto
+    cmds:
+      - "{{.BUF}} generate"
+
+  proto:lint:
+    deps: [install-buf]
+    desc: Проверка корректности .proto файлов
+    
+    cmds:
+      - "{{.BUF}} lint"

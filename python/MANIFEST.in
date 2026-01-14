@@ -1,0 +1,4 @@
+include README.md
+graft src/rocket_factory_contracts/proto
+global-include src/rocket_factory_contracts/*_pb2.py
+global-include src/rocket_factory_contracts/*_pb2_grpc.py

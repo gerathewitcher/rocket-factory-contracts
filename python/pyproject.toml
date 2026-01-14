@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=69", "setuptools-scm>=8"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rocket-factory-contracts"
+description = "Auto-generated Python stubs for Rocket Factory protobuf/gRPC contracts."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Proprietary" }
+authors = [{ name = "Rocket Factory" }]
+dependencies = [
+  "protobuf>=4.23",
+  "grpcio>=1.60",
+]
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/OWNER/rocket-factory-contracts"
+
+[tool.setuptools_scm]
+fallback_version = "0.0.0"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+rocket_factory_contracts = ["proto/**/*.proto"]
