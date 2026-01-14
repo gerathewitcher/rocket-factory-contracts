@@ -49,7 +49,6 @@ jobs:
         run: python -m build
 
       - name: Publish to GitHub Packages (Python)
-        if: github.event_name == 'push'
         working-directory: python
         env:
           TWINE_USERNAME: ${{ github.actor }}
