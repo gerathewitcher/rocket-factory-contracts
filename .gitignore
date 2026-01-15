@@ -6,10 +6,7 @@ dist/
 python/.python-version
 python/.venv/
 python/dist/
-python/src/rocket_factory_contracts/*_pb2*.py
-python/src/rocket_factory_contracts/proto/
-python/src/rocket_factory_contracts/__pycache__/
-python/src/rocket_factory_contracts/*
+python/src/
 .idea/
 .vscode/
 **/__pycache__/

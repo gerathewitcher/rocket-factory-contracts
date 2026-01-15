@@ -3,8 +3,8 @@ clean: true
 
 plugins:
   - remote: buf.build/protocolbuffers/python
-    out: ./python/src/rocket_factory_contracts
+    out: ./python/src/
   - remote: buf.build/grpc/python
-    out: ./python/src/rocket_factory_contracts
+    out: ./python/src/
   - remote: buf.build/protocolbuffers/pyi
-    out: ./python/src/rocket_factory_contracts
+    out: ./python/src/
