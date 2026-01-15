@@ -1,5 +1,5 @@
 syntax = "proto3";
-package payment.v1;
+package payment_proto.v1;
 
 option go_package = "github.com/rocket-factory/shared/proto/payment/v1";
 
