@@ -20,4 +20,4 @@ python -m build python
 ```
 
 ## Публикация
-GitHub Actions собирает и публикует Python-пакет при пуше тега (`v*` или `python-v*`). Для публикации нужен `GITHUB_TOKEN` (предоставляется GitHub Actions) с правами `packages:write`. См. `.github/workflows/python-publish.yml`.
+GitHub Actions собирает и публикует Python-пакет при пуше тега (`v*` или `python-v*`)
