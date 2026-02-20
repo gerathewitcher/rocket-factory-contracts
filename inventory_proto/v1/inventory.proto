@@ -3,8 +3,6 @@ package inventory_proto.v1;
 
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/rocket-factory/shared/proto/inventory/v1";
-
 service InventoryService {
   rpc GetPart(GetPartRequest) returns (GetPartResponse) {}
   rpc ListParts(ListPartsRequest) returns (ListPartsResponse) {}
@@ -58,7 +56,7 @@ message Part {
 // Структура производителя
 message Manufacturer {
   string name = 1;
-  string address = 2;
+  string country = 2;
   string website = 3;
 }
 
